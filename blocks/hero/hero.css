@@ -18,4 +18,14 @@ main .hero div {
 
 main .hero div div {
     flex: 1;
+    align-items: center;
+}
+
+main .hero h1 {
+    color: white;
+    margin: auto;
+}
+
+main .hero div div:last-of-type {
+    background-image: url("/styles/textures/blue-2.jpeg");
 }
