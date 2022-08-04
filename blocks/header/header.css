@@ -1,9 +1,14 @@
-
-header nav {
-  display: flex;  
+header {
+  position: absolute;
+  width: 100%;
 }
 
-header .nav-tools {  
+header nav {
+  display: flex;
+  height: 110px;
+}
+
+header .nav-tools {
   position: absolute;
   top: 0;
   right: 2rem;
@@ -26,6 +31,13 @@ header .nav-tools ul, header .nav-tools ol, header .nav-sections ul {
   margin: 0;
 }
 
+header .nav-sections ul {
+  box-sizing: border-box;
+  align-items: flex-end;
+  height: 110px;
+  padding-bottom: 1.8rem;
+}
+
 header .nav-tools li {
   padding: 0.25rem 0.5rem;
   position: relative;
@@ -38,13 +50,16 @@ header .nav-brand img {
 
 @media screen and (min-width: 1000px) {
   header nav {
-    background: url(/icons/brush-stroke.svg) no-repeat;
+    content: '';
+    background: url("/icons/brush-stroke.svg");
+    background-repeat: no-repeat;
+    background-size: 60% 1000%;
   }
 
   header .nav-sections li {
     padding: 0 0.667rem;
   }
-  
+
   header .nav-tools li a {
     border-bottom: 2px dashed #fff;
   }
