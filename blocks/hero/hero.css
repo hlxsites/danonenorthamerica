@@ -21,16 +21,23 @@ main .hero div div {
     align-items: center;
 }
 
-main .hero h1 {
-    color: white;
-    margin: auto;
-}
-
-main .hero div div:last-of-type {
-    background-image: url("/styles/textures/blue-2.jpeg");
-}
-
 main .hero picture, main .hero img {
     width: 100%;
     height: 100%;
 }
+
+main .hero div .right {
+    background-image: url("/styles/textures/blue-2.jpeg");
+    height: 100%;
+    flex-direction: column;
+    color: white;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+main .hero div .right p {
+    padding: 0 20%;
+    text-align: center;
+}
+

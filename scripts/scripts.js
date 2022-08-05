@@ -607,10 +607,24 @@ loadPage(document);
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
+  const ps = main.querySelectorAll('p');
+  let p;
+  if (ps.length > 1) {
+    // first p is hero image
+    p = ps[1];
+  }
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
-    section.append(buildBlock('hero', [[picture, h1]]));
+    const right = document.createElement('div');
+    right.classList.add('right');
+    right.append(h1)
+    const cells = [picture, right];
+    if (p && (p.compareDocumentPosition(h1) & Node.DOCUMENT_POSITION_PRECEDING)) {
+      right.append(p);
+    }
+    
+    section.append(buildBlock('hero', [cells]));
     main.prepend(section);
   }
 }
