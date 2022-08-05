@@ -230,12 +230,14 @@ main img {
 
 @media (min-width: 900px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
+    --heading-font-size-xxl: 80px;
+    --heading-font-size-xl: 40px;
+    --heading-font-size-l: 37.83px;
+    --heading-font-size-m: 25px;
+    --heading-font-size-s: 28px;
+    --heading-font-size-xs: 14.55px;
+    --body-font-size-l: 22px;
+    --body-font-size-m: 18.915px;
   }
 
   .section > div {
