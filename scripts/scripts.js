@@ -607,12 +607,14 @@ loadPage(document);
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
-  const ps = main.querySelectorAll('p');
-  let p;
-  if (ps.length > 1) {
-    // first p is hero image
-    p = ps[1];
+  if (picture) {
+    // remove parent p for next p search to find real first p.
+    const parent = picture.parentElement;
+    parent.before(picture);
+    parent.remove();
   }
+  const p = picture.parentElement.querySelector('p');
+
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
