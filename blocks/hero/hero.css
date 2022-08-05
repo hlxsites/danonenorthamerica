@@ -29,3 +29,7 @@ main .hero h1 {
 main .hero div div:last-of-type {
     background-image: url("/styles/textures/blue-2.jpeg");
 }
+
+main .hero picture, main .hero img {
+    width: 100%;
+}
