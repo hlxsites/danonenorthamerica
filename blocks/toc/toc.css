@@ -1,0 +1,35 @@
+main .toc {
+    color: var(--category-color);
+    background-color: var(--category-bg-color);
+    text-decoration: none;
+    margin: 40px 0;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+main .toc a:any-link{
+    color: var(--category-darker-color);
+    background-color: var(--category-bg-color);
+    text-decoration: none;
+}
+
+main .toc .toc-title {
+    display: none;
+}
+
+main .toc ol {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+}
+
+main .toc-container {
+    padding: 0!important;
+    margin-bottom: -100px;
+}
+@media (min-width: 600px) {
+
+}  
+  
