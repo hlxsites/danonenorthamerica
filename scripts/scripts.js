@@ -487,7 +487,7 @@ function decorateTemplateAndTheme() {
 export function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
-    if (a.href !== a.textContent) {
+    if (a.href !== a.textContent && !a.href.toLocaleLowerCase().startsWith('tel')) {
       const up = a.parentElement;
       const twoup = a.parentElement.parentElement;
       if (!a.querySelector('img')) {
@@ -620,12 +620,12 @@ function buildHeroBlock(main) {
     const section = document.createElement('div');
     const right = document.createElement('div');
     right.classList.add('right');
-    right.append(h1)
+    right.append(h1);
     const cells = [picture, right];
+    // eslint-disable-next-line no-bitwise
     if (p && (p.compareDocumentPosition(h1) & Node.DOCUMENT_POSITION_PRECEDING)) {
       right.append(p);
     }
-    
     section.append(buildBlock('hero', [cells]));
     main.prepend(section);
   }
