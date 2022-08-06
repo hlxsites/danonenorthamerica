@@ -9,9 +9,9 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
- :root {
+:root {
   /* fonts */
-  --heading1-font-family: BlogScript, sans-serif;
+  --heading1-font-family: blogscript, sans-serif;
   --heading-font-family: sans-serif;
   --body-font-family: sans-serif;
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
@@ -20,9 +20,9 @@
   --text-color: #6d6e71;
   --link-color: #d3007d;
   --link-hover-color: #d3007d;
-  --background-color: #ffffff;
-  --overlay-background-color: #eeeeee;
-  --highlight-background-color: #cccccc;
+  --background-color: #fff;
+  --overlay-background-color: #eee;
+  --highlight-background-color: #ccc;
   --heading-color: #005eb8;
 
   /* sizes */
@@ -66,9 +66,11 @@ h1 {
   margin-top: 1em;
   margin-bottom: .5em;
   scroll-margin: calc(var(--nav-height) + 1em);
+  font-size: var(--heading-font-size-xxl)
 }
 
-h2, h3 {
+h2,
+h3 {
   font-family: var(--heading-font-family);
   color: var(--heading-color);
   text-transform: uppercase;
@@ -80,7 +82,9 @@ h2, h3 {
   text-align: center;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-family: var(--heading-font-family);
   font-weight: 300;
   line-height: 1.25;
@@ -90,15 +94,32 @@ h4, h5, h6 {
   text-align: center;
 }
 
+h2 {
+  font-size: var(--heading-font-size-xl)
+}
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h3 {
+  font-size: var(--heading-font-size-l)
+}
 
-p, dl, ol, ul, pre, blockquote {
+h4 {
+  font-size: var(--heading-font-size-m)
+}
+
+h5 {
+  font-size: var(--heading-font-size-s)
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs)
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -113,12 +134,15 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-code, pre, samp {
+code,
+pre,
+samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code, samp {
+code,
+samp {
   padding: .125em;
 }
 
@@ -128,7 +152,8 @@ pre {
 
 /* buttons */
 
-a.button:any-link, button {
+a.button:any-link,
+button {
   font-family: var(--font-family-body);
   display: inline-block;
   box-sizing: border-box;
@@ -148,17 +173,22 @@ a.button:any-link, button {
   border-radius: 30px;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus  {
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
+button:disabled,
+button:disabled:hover {
   background-color: var(--overlay-background-color);
   cursor: unset;
 }
 
-a.button.secondary, button.secondary {
+a.button.secondary,
+button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color)
@@ -243,7 +273,7 @@ main img {
     --body-font-size-m: 18.915px;
   }
 
-  .section > div {
+  .section>div {
     max-width: 1200px;
     margin: auto;
   }
@@ -267,18 +297,6 @@ main .section.highlight {
   font-style: normal
 }
 
-main .centered-list ul {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    width: 50%;
-    margin: auto;
-}
-
-main .center {
-  text-align: center;
-}
-
 main .brands div {
   display: flex;
   justify-content: center;
@@ -289,5 +307,3 @@ main .brands img {
   width: 75px;
   padding: 10px;
 }
-
-n* { border: 1px solid black; }
