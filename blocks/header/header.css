@@ -1,4 +1,5 @@
 /* header and nav layout */
+
 header nav {
   display: grid;
   grid-template:
@@ -6,7 +7,6 @@ header nav {
     'sections sections sections' 1fr / 50px 1fr 50px;
   align-items: center;
   padding: 0 2rem;
-  position: fixed;
   z-index: 1;
   background-color: var(--background-color);
   width: 100vw;
@@ -36,10 +36,6 @@ header .nav-brand {
 
 header nav .nav-brand p {
   margin: 0;
-}
-
-header nav .nav-brand img {
-  width: 128px;
 }
 
 /* hamburger */
@@ -256,4 +252,27 @@ header nav[aria-expanded='true'] .nav-tools li {
     padding: 16px;
     box-shadow: 0 0 5px var(text-color);
   }
+}
+
+header .nav-tools {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+}
+
+header .nav-tools p {
+  padding-top: 2px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+header .nav-tools ul, header .nav-tools ol, header .nav-sections ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+header .nav-tools li {
+  padding: 0.25rem 0.5rem;
+  position: relative;
 }
