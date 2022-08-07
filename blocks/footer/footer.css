@@ -1,14 +1,52 @@
-footer {
-  padding: 2rem;
-  background-color: var(--overlay-background-color);
-  font-size: var(--body-font-size-s);
+footer div {
+  width: 100%;
 }
 
-footer .footer {
-  max-width: 1200px;
-  margin: auto;
+footer .columns {
+  display: flex;
+  justify-content: center;
 }
 
-footer .footer p {
-  margin: 0;
+footer .columns div {
+  width: 80%;
+}
+
+footer .columns img {
+  width: unset;
+  padding: 10px;
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+footer ul li {
+  padding: 10px;
+}
+
+footer ul li svg {
+  width: 25px;
+}
+
+footer .bottom {
+  background-color: black;
+  display: flex;
+  color: white;
+}
+
+footer .bottom div {
+  width: 50%;
+  display: flex;
+}
+
+footer .bottom img {
+  width: 50px;
+  height: auto;
+  padding: unset;
+}
+
+footer .bottom>div:nth-child(2)>div {
+  justify-content: flex-end;
 }
