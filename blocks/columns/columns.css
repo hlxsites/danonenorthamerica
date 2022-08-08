@@ -7,6 +7,12 @@
     width: 100%;
 }
 
+.columns ul {
+    list-style: none;
+    padding: unset;
+}
+
+
 @media (min-width: 900px) {
     .columns > div {
         display: flex;

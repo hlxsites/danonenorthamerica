@@ -21,6 +21,7 @@
   --link-color: #d3007d;
   --link-hover-color: #d3007d;
   --background-color: #fff;
+  --grey-background-color: #f0f1f1;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --heading-color: #005eb8;
@@ -255,6 +256,15 @@ main img {
   height: auto;
 }
 
+main .grey {
+  background-color: var(--grey-background-color);
+}
+
+main .green {
+  background-image: radial-gradient(#9adedc 0, #64ccc9);
+  color: #4e2683;
+}
+
 @media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
@@ -306,4 +316,23 @@ main .brands div {
 main .brands img {
   width: 75px;
   padding: 10px;
+}
+
+main .purple-texture {
+  background-image: url(/styles/textures/texture-purple-1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main .purple-texture p {
+  color: white;
+}
+
+main .purple-texture h1 {
+  color: #2ab4dc;
+}
+
+main .logo-med img {
+  width: unset;
+  height: 90px;
 }
