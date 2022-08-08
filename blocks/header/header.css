@@ -1,5 +1,29 @@
 /* header and nav layout */
 
+header {
+  height: 110px;
+  width: 100%;
+  position: absolute;
+  z-index: 99;
+}
+
+header .header {
+  margin-top: 26px;
+}
+
+header:after {
+  content: "";
+  background: url(/icons/brush-stroke.svg) -250px bottom no-repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-size: 90% 85px;
+  z-index: -1;
+  width: 100%;
+  position: absolute;
+}
+
 header nav {
   display: grid;
   grid-template:
@@ -8,15 +32,25 @@ header nav {
   align-items: center;
   padding: 0 2rem;
   z-index: 1;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   width: 100%;
   height: var(--nav-height);
   box-sizing: border-box;
   font-family: var(--body-font-family);
 }
 
-header nav a:any-link {
-  color: currentcolor;
+header nav .nav-sections a:any-link {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  font-size: .9vw;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  font-weight: 700;
+}
+
+header nav .nav-sections a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
 }
 
 header nav[aria-expanded='true'] {
@@ -29,13 +63,13 @@ header nav[aria-expanded='true'] {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1em;
 }
 
-header nav .nav-brand p {
-  margin: 0;
+header nav .nav-brand img {
+  width: 200px;
+  margin-left: 2rem;
+  height: 100%;
+  margin-top: 10px;
 }
 
 /* hamburger */
@@ -133,8 +167,23 @@ header nav .nav-tools {
   height: 22px;
 }
 
+header nav .nav-tools a:any-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  font-weight: 700;
+  border-bottom: 2px dashed #fff;  
+}
+
+header nav .nav-tools a:hover {
+  color: var(--link-hover-color);
+}
+
 header nav .nav-tools p {
   margin: 0;
+  color: #fff;
 }
 
 header nav[aria-expanded='true'] .nav-tools img {
