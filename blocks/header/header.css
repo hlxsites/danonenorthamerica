@@ -42,7 +42,6 @@ header nav {
 header nav .nav-sections a:any-link {
   color: var(--nav-link-color);
   text-decoration: none;
-  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: .7px;
   font-weight: 700;
@@ -164,7 +163,6 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-tools {
   grid-area: tools;
   flex: 0 0 auto;
-  height: 22px;
 }
 
 header nav .nav-tools a:any-link {
@@ -189,6 +187,7 @@ header nav .nav-tools p {
   padding-right: 15px;
   font-size: 17px;
   letter-spacing: .7px;
+  height: 24px;
 }
 
 header nav[aria-expanded='true'] .nav-tools img {
@@ -284,7 +283,7 @@ header .nav-tools li {
   header nav .nav-sections > ul > li > p {
     margin: 0;
   }
-
+/* 
   header nav .nav-sections > ul > li > ul {
     margin-top: 20px;
     display: none;
@@ -293,8 +292,8 @@ header .nav-tools li {
 
   header nav .nav-sections > ul > li > ul:any-link {
     font-size: var(--body-font-size-m);
-  }
-
+  } */
+/* 
   header nav .nav-sections > ul > li > ul::before {
     content: '';
     width: 0;
@@ -305,13 +304,13 @@ header .nav-tools li {
     border-bottom: 15px solid var(--highlight-background-color);
     top: -15px;
     left: 20px;
-  }
+  } */
 
 
-  header nav .nav-sections > ul > li > ul > li {
+  /* header nav .nav-sections > ul > li > ul > li {
     font-size: 18px;
     padding: 8px 16px;
-  }
+  } */
 
   header nav .nav-sections > ul > li[aria-expanded='true'] ul {
     display: block;
@@ -324,8 +323,13 @@ header .nav-tools li {
   }
 
   header .nav-tools {
-    position: absolute;
-    top: 0;
-    right: 2rem;
+    margin-top: -75px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+  header nav .nav-sections > ul > li {
+    font-size: 14px;
+    padding: 0 10px;
   }
 }
