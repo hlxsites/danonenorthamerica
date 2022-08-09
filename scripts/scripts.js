@@ -586,7 +586,7 @@ initHlx();
  * ------------------------------------------------------------
  */
 
-const LCP_BLOCKS = ['hero']; // add your LCP blocks to the list
+const LCP_BLOCKS = ['hero', 'carousel']; // add your LCP blocks to the list
 const RUM_GENERATION = 'project-1'; // add your RUM generation information here
 const ICON_ROOT = '/icons';
 
@@ -604,32 +604,15 @@ window.addEventListener('error', (event) => {
 
 loadPage(document);
 
-// function buildHeroBlock(main) {
-//   const h1 = main.querySelector('h1');
-//   const picture = main.querySelector('picture');
-//   if (picture) {
-//     // remove parent p for next p search to find real first p.
-//     const parent = picture.parentElement;
-//     parent.before(picture);
-//     parent.remove();
-//   }
-//   const p = picture.parentElement.querySelector('p');
-
-//   // eslint-disable-next-line no-bitwise
-//   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
-//     const section = document.createElement('div');
-//     const right = document.createElement('div');
-//     right.classList.add('right');
-//     right.append(h1);
-//     const cells = [picture, right];
-//     // eslint-disable-next-line no-bitwise
-//     if (p && (p.compareDocumentPosition(h1) & Node.DOCUMENT_POSITION_PRECEDING)) {
-//       right.append(p);
-//     }
-//     section.append(buildBlock('hero', [cells]));
-//     main.prepend(section);
-//   }
-// }
+function buildHeroBlock(main) {
+  const hero = main.querySelector('.hero');
+  if (hero) {
+    // move here block to own section
+    const section = document.createElement('div');
+    section.append(hero);
+    main.prepend(section);
+  }
+}
 
 function loadHeader(header) {
   const headerBlock = buildBlock('header', '');
@@ -651,7 +634,7 @@ function loadFooter(footer) {
  */
 function buildAutoBlocks(main) {
   try {
-    // buildHeroBlock(main);
+    buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
