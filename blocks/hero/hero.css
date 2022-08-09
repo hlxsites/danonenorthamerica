@@ -13,7 +13,7 @@ main .hero {
 }
 
 main .hero div {
-    display: flex;
+    display: block;
 }
 
 main .hero div div {
@@ -26,18 +26,61 @@ main .hero picture, main .hero img {
     height: 100%;
 }
 
-main .hero div .right {
-    background-image: url("/styles/textures/blue-2.jpeg");
+main .hero > div > div:last-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    flex-direction: column;
+}
+
+main .hero div .right {
+    width: 100%;
+    height: 100%;
+    text-align: center;
     color: white;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
+    margin-top: 30vw;
 }
 
 main .hero div .right p {
     padding: 0 20%;
     text-align: center;
+}
+
+@media (min-width: 1000px) {
+    main .hero div {
+        display: flex;
+    }
+    
+    main .hero div div {
+        flex: 1;
+        align-items: center;
+    }
+    
+    main .hero picture, main .hero img {
+        width: 100%;
+        height: 100%;
+    }
+
+    main .hero > div > div:last-of-type {
+        position: relative;
+        height: unset;
+    }
+
+    main .hero div .right {
+        background-image: url("/styles/textures/blue-2.jpeg");
+        height: 100%;
+        flex-direction: column;
+        color: white;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    main .hero div .right p {
+        padding: 0 20%;
+        text-align: center;
+    }
 }
 
