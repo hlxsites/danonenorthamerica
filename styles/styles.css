@@ -38,7 +38,7 @@
   --body-font-size-m: 18.915px;
 
   /* nav height */
-  --nav-height: 80px;
+  --nav-height: 50px;
 
 }
 
@@ -276,6 +276,10 @@ main .green {
     --heading-font-size-xs: 14.55px;
     --body-font-size-l: 22px;
     --body-font-size-m: 18.915px;
+  }
+
+  header {
+    height: 110px;
   }
 
   main .section {
