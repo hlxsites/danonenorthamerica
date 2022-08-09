@@ -1,0 +1,79 @@
+main .carousel-container {
+    padding: 0;
+}
+
+main .carousel-wrapper {
+    max-width: unset;
+}
+
+main .carousel.block .invisible {
+    display: none;
+}
+
+main .carousel.block .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 8px;
+    background: var(--background-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+main .carousel.block .dot.selected {
+    background: #64ccc9;
+}
+
+main .carousel.block .select-control {
+    text-align: center;
+    position: absolute;
+    bottom: 100px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+main .carousel.block h2,
+main .carousel.block h3,
+main .carousel.block h4,
+main .carousel.block li {
+    color: var(--background-color);
+}
+
+main .carousel.block h2 {
+    font-family: var(--heading1-font-family);
+}
+
+
+main .carousel.block>div {
+    display: flex;
+}
+
+main .carousel.block>div>div {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .carousel.block>div>div:nth-child(2) {
+    background-image: url("/styles/textures/blue-2.jpeg");
+}
+
+main .carousel.block>div>div:nth-child(2) ol li .visible {
+    padding: 20px;
+}
+
+main .carousel.block img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+main .carousel.block ol {
+    list-style: none;
+    margin: unset;
+    padding: unset;
+}
