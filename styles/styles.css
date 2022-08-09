@@ -216,7 +216,7 @@ main input:hover {
 }
 
 main .section {
-  padding: 64px 16px;
+  padding: 0 16px;
 }
 
 main pre {
@@ -266,13 +266,7 @@ main .green {
   color: #4e2683;
 }
 
-@media (min-width: 600px) {
-  main .section {
-    padding: 64px 32px;
-  }
-}
-
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   :root {
     --heading-font-size-xxl: 80px;
     --heading-font-size-xl: 40px;
@@ -282,6 +276,10 @@ main .green {
     --heading-font-size-xs: 14.55px;
     --body-font-size-l: 22px;
     --body-font-size-m: 18.915px;
+  }
+
+  main .section {
+    padding: 64px 16px;
   }
 
   .section>div {
