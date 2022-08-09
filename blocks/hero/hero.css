@@ -6,6 +6,7 @@ main .hero-container > div {
   
 main .section.hero-container {
     padding: 0;
+    margin-bottom: 32px;
 }
   
 main .hero {
@@ -67,20 +68,22 @@ main .hero div .right p {
         height: unset;
     }
 
-    main .hero div .right {
-        background-image: url("/styles/textures/blue-2.jpeg");
-        height: 100%;
+    main .hero > div > div:last-of-type {
         flex-direction: column;
         color: white;
-        margin: auto;
         align-items: center;
         justify-content: center;
         margin-top: 0;
     }
 
-    main .hero div .right p {
+    main .hero > div > div:last-of-type p {
         padding: 0 20%;
         text-align: center;
+    }
+
+    main .hero > div > div:last-of-type picture {
+        position: absolute;
+        z-index: -1;
     }
 }
 
