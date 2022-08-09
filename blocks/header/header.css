@@ -333,6 +333,7 @@ header .nav-tools li {
     grid-area: tools;
     flex: 0 0 auto;
     margin-top: -75px;
+    display: unset;
   }
   
   header nav .nav-tools a:any-link {
