@@ -1,0 +1,28 @@
+main .contact-container {
+  display: flex;
+  flex-direction: column;
+}
+
+main .contact-wrapper {
+  text-align: center;
+  background-image: radial-gradient(farthest-corner at 100% 0,#9adedc 0,#64ccc9 65%);
+}
+
+main .contact-container>div {
+  flex: 1;
+}
+main .block.contact ul {
+  list-style: none;
+  columns: 2;
+}
+
+main .block.contact h2 {
+  font-family: var(--heading1-font-family);
+}
+
+@media (min-width: 1000px) {
+  main .contact-container {
+    display: flex;
+    flex-direction: row;
+  }
+}

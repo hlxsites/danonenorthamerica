@@ -1,0 +1,10 @@
+main .news-wrapper {
+  text-align: center;
+  background-image: radial-gradient(farthest-corner at 100% 0,#5972a7 0,#002677 65%);
+  margin: unset;
+}
+
+main .block.news h2 {
+  font-family: var(--heading1-font-family);
+  color: #f7e082;
+}
