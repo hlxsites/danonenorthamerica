@@ -29,3 +29,7 @@ main .block.news > div > div a {
     font-weight: 700;
     letter-spacing: .7px;
 }
+
+main .block.news > div > div a:hover {
+  text-decoration: none;
+}
