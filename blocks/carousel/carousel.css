@@ -27,7 +27,7 @@ main .carousel.block .dot.selected {
 main .carousel.block .select-control {
     text-align: center;
     position: absolute;
-    bottom: 100px;
+    bottom: 2%;
     margin: auto;
     left: 0;
     right: 0;
@@ -47,6 +47,7 @@ main .carousel.block h2 {
 
 main .carousel.block>div {
     display: flex;
+    flex-direction: column;
 }
 
 main .carousel.block>div>div {
@@ -55,11 +56,15 @@ main .carousel.block>div>div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 main .carousel.block>div>div:nth-child(2) {
-    background-image: url("/styles/textures/blue-2.jpeg");
+    justify-content: center;
+    overflow: hidden;
+}
+
+main .carousel.block>div>div:nth-child(2) ol {
+    list-style: none;
 }
 
 main .carousel.block>div>div:nth-child(2) ol li .visible {
@@ -72,8 +77,29 @@ main .carousel.block img {
     display: block;
 }
 
-main .carousel.block ol {
+main .carousel.block>div>div:nth-child(1) ol {
     list-style: none;
     margin: unset;
     padding: unset;
+    width: 100%;
+    height: 100%;
+}
+
+main .carousel.block>div>div:nth-child(1) ol {
+    width: 100%;
+    height: 100%;
+}
+
+main .carousel.block>div>div:nth-child(2) picture {
+    display: unset;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 1000px) {
+    main .carousel.block>div {
+        flex-direction: row;
+    }
 }

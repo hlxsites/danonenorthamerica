@@ -16,43 +16,59 @@ function switchCorouselIdx(event) {
     item.classList.add('visible');
   });
 }
-
 export default function decorate(block) {
-  const imgDiv = block.querySelector(':scope>div>div:nth-child(1)');
-  const textDiv = block.querySelector(':scope>div>div:nth-child(2)');
-
-  imgDiv.querySelectorAll(':scope ol>picture').forEach((item) => {
-    const parent = item.parentNode;
-    const wrapper = document.createElement('li');
-    parent.replaceChild(wrapper, item);
-    wrapper.appendChild(item);
-  });
-
+  const mainDiv = document.createElement('div');
+  const imgDiv = document.createElement('div');
+  const textDiv = document.createElement('div');
+  const imgOl = document.createElement('ol');
+  const textOl = document.createElement('ol');
   const selectControl = document.createElement('ol');
   selectControl.classList.add('select-control');
-  let idx = 0;
-  imgDiv.querySelectorAll(':scope ol>li').forEach((item) => {
-    idx += 1;
-    item.classList.add('invisible');
-    item.setAttribute('data-idx', idx);
-    const selectControlItem = document.createElement('li');
-    selectControlItem.classList.add('dot');
-    selectControlItem.setAttribute('data-control-idx', idx);
-    selectControlItem.addEventListener('click', switchCorouselIdx);
-    selectControl.appendChild(selectControlItem);
+
+  block.querySelectorAll(':scope>div').forEach((divItem, idx) => {
+    if (idx == 0) {
+      textDiv.appendChild(divItem.querySelector(':scope picture'));
+      textDiv.appendChild(divItem.querySelector(':scope h2'));
+      textDiv.appendChild(divItem.querySelector(':scope h4'));
+    } else {
+      const imgItem = document.createElement('li');
+      if (idx == 1) {
+        imgItem.classList.add('visible');
+      } else {
+        imgItem.classList.add('invisible');
+      }
+
+      imgItem.setAttribute('data-idx', idx);
+      imgItem.appendChild(divItem.querySelector(':scope picture'));
+      imgOl.appendChild(imgItem);
+
+      const txtItem = document.createElement('li');
+      if (idx == 1) {
+        txtItem.classList.add('visible');
+      } else {
+        txtItem.classList.add('invisible');
+      }
+
+      txtItem.setAttribute('data-idx', idx);
+      txtItem.appendChild(divItem.querySelector(':scope div:last-of-type'));
+      textOl.appendChild(txtItem);
+
+      const selectControlItem = document.createElement('li');
+      selectControlItem.classList.add('dot');
+      if (idx == 1) {
+        selectControlItem.classList.add('selected');
+      }
+      selectControlItem.setAttribute('data-control-idx', idx);
+      selectControlItem.addEventListener('click', switchCorouselIdx);
+      selectControl.appendChild(selectControlItem);
+    }
   });
 
-  idx = 0;
-  textDiv.querySelectorAll(':scope ol>li').forEach((item) => {
-    idx += 1;
-    item.classList.add('invisible');
-    item.setAttribute('data-idx', idx);
-  });
-  imgDiv.querySelector(':scope ol>li:nth-child(1)').classList.remove('invisible');
-  textDiv.querySelector(':scope ol>li:nth-child(1)').classList.remove('invisible');
-  imgDiv.querySelector(':scope ol>li:nth-child(1)').classList.add('visible');
-  textDiv.querySelector(':scope ol>li:nth-child(1)').classList.add('visible');
-  selectControl.querySelector(':scope li:nth-child(1)').classList.add('selected');
-
+  imgDiv.appendChild(imgOl);
+  textDiv.appendChild(textOl);
   textDiv.appendChild(selectControl);
+  mainDiv.appendChild(imgDiv);
+  mainDiv.appendChild(textDiv);
+  block.innerHTML = '';
+  block.appendChild(mainDiv);
 }
