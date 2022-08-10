@@ -66,8 +66,8 @@ h1 {
   font-family: var(--heading1-font-family);
   font-weight: 700;
   line-height: 1.25;
-  margin-top: 1em;
-  margin-bottom: .5em;
+  margin-top: 1.2em;
+  margin-bottom: .1em;
   font-size: 6vw;
 }
 
