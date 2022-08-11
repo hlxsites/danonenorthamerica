@@ -93,6 +93,22 @@ const makeAbsoluteLinks = (main) => {
   });
 };
 
+const makeProxySrcs = (main) => {
+  main.querySelectorAll('img').forEach((img) => {
+    if (img.src.startsWith('/')) {
+      img.src = `http://localhost:3001${img.src}?host=https://www.danonenorthamerica.com`;
+    } else {
+      try {
+        const u = new URL(img.src);
+        u.searchParams.append('host', 'https://www.danonenorthamerica.com');
+        img.src = `http://localhost:3001${u.pathname}${u.search}`;
+      } catch (error) {
+        console.warn(`Unable to make proxy src for ${img.src}: ${error.message}`);
+      }
+    }
+  });
+};
+
 export default {
   /**
    * Apply DOM operations to the provided document and return
@@ -115,6 +131,7 @@ export default {
     createMetadata(main, document);
     createNewsBlocks(main, document);
     makeAbsoluteLinks(main);
+    makeProxySrcs(main);
 
     return main;
   },
@@ -135,4 +152,4 @@ export default {
     }
     return sanitized;
   },
-};
+}
