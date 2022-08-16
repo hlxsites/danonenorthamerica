@@ -9,11 +9,23 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+@font-face {
+  font-family: "dot-fallback";
+  size-adjust: 87.77%;
+  src: local("Arial");
+}
+
+@font-face {
+  font-family: "blogscript-fallback";
+  size-adjust: 101.53%;
+  src: local("Arial");
+}
+
 :root {
   /* fonts */
-  --heading1-font-family: blogscript, sans-serif;
-  --heading-font-family: ".", sans-serif;
-  --body-font-family: ".",  sans-serif;
+  --heading1-font-family: blogscript, blogscript-fallback, sans-serif;
+  --heading-font-family: ".", dot-fallback, sans-serif;
+  --body-font-family: ".", dot-fallback,  sans-serif;
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
 
   /* colors */
