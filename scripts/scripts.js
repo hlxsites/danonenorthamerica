@@ -283,7 +283,10 @@ export function decorateSections($main) {
       const keys = Object.keys(meta);
       keys.forEach((key) => {
         if (key === 'style') section.classList.add(toClassName(meta.style));
-        else section.dataset[toCamelCase(key)] = meta[key];
+        else if (key === 'background-image') {
+          section.style.background = `url('${meta['background-image']}') no-repeat`;
+          section.style['background-size'] = 'cover';
+        } else section.dataset[toCamelCase(key)] = meta[key];
       });
       sectionMeta.remove();
     }

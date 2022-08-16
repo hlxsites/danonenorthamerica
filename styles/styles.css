@@ -329,3 +329,11 @@ main .logo-med img {
   width: unset;
   height: 90px;
 }
+
+main .wide {
+  padding: unset;
+}
+
+main .wide div {
+  max-width: unset;
+}
