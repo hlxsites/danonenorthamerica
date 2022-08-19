@@ -1,0 +1,54 @@
+.backgroundimagecolumns>div {
+  display: flex;
+  flex-direction: column;
+}
+
+.backgroundimagecolumns>div>div {
+  align-self: stretch;
+}
+
+.backgroundimagecolumns p {
+  padding: 10px;
+}
+
+.backgroundimagecolumns img {
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundimagecolumns.contacts ul {
+  list-style: none;
+}
+
+.backgroundimagecolumns div.with-background {
+  position: relative;
+}
+
+.backgroundimagecolumns div.with-background .background-image {
+  display: unset;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundimagecolumns div.with-background .background-image>img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 900px) {
+  .backgroundimagecolumns>div {
+    display: flex;
+    align-items: start;
+    flex-direction: unset;
+  }
+
+  .backgroundimagecolumns>div>div {
+    flex: 1;
+  }
+
+  .backgroundimagecolumns>div>div:first-of-type {
+    margin-left: unset;
+  }
+}
